@@ -1,0 +1,4 @@
+plot 'dpendulum.dat' using 2:3 every ::::(i+1)*5 title "Top Pendulum",\
+     'dpendulum.dat' using 4:5 every ::::(i+1)*5 title "Bottom Penulum",\
+i=i+1
+if (i < n) reread

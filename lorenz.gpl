@@ -1,0 +1,22 @@
+###############################################################
+# This macro is for the plotting of the pendulum data from 
+# lorenz.c
+#
+# Author: Ali Chaudhary
+# 67694450
+###############################################################
+
+#label the axis
+set xlabel "X Position [cm]"
+set ylabel "Y Position [cm]"
+set zlabel "Z Position [cm]"
+set title "Lorenz Attractor"
+
+
+
+
+#now plot the data
+set terminal png
+set output "lorenz1.png"
+splot 'lorenz.dat' with lines title "Lorenz Attractor"
+

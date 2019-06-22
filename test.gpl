@@ -1,0 +1,12 @@
+reset
+set term gif animate
+set output "dpendulum.gif"
+n=500    #n frames
+dt=0.1
+set yrange[-600:0]
+set xrange[-500:500]
+set xlabel "X position"
+set ylabel "Y position"
+i=0
+load "animate1.gpl"
+set output

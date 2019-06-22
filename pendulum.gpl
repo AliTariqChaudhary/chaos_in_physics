@@ -1,0 +1,38 @@
+###############################################################
+# This macro is for the plotting of the pendulum data from 
+# pendulum.c
+#
+# Author: Ali Chaudhary
+# 67694450
+###############################################################
+
+#label the axis
+set xlabel "X Position [cm]"
+set ylabel "Y Position [cm]"
+set title "Single pendulum"
+
+
+
+
+#now plot the data
+plot 'spendulum.dat' using 2:3 with linespoints title "Single Pendulum"
+
+#set range to make graph look better
+set yrange[GPVAL_DATA_Y_MIN:0]
+replot
+
+#lets also save to a file for future use
+set terminal png
+set output "spendulum2.png"
+plot 'spendulum.dat' using 2:3 with linespoints title "Single Pendulum"
+
+#now lets plot the double pendulum
+
+plot 'dpendulum.dat' using 2:3 with linespoints title "Top Pendulum",\
+     'dpendulum.dat' using 4:5 with linespoints title "Bottom Pendulum"
+set terminal png
+set title "Double pendulum"
+set output "dpendulum2.png"
+set yrange[GPVAL_DATA_Y_MIN:0]
+plot 'dpendulum.dat' using 2:3 with linespoints title "Top Pendulum",\
+     'dpendulum.dat' using 4:5 with linespoints title "Bottom Pendulum"
